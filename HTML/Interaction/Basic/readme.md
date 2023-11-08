@@ -1,7 +1,8 @@
 ### INDEX
 
+[이동] (#)
 
-[텍스트텍스트] (#index-sum)
+[텍스트텍스트](#index-sum)
 <br/>
 <br/>
 <br/>
