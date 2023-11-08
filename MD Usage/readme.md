@@ -1,44 +1,24 @@
 ## Index
-1. 기초
-    1. [제목 (header)](#제목-header)
-    1. [수평선 (horizontal rule)](#수평선-horizontal-rule)
-    1. [글자 강조 (emphasis)](#글자-강조-emphasis)
-    1. [목록 (list)](#목록-list)
-    1. [인용문 (block quote)](#인용문-block-quote)
-    1. [표 (table)](#표-table)
+ **기초**
+1. [제목 (header)](#제목-header)
+1. [수평선 (horizontal rule)](#수평선-horizontal-rule)
+1. [글자 강조 (emphasis)](#글자-강조-emphasis)
+1. [목록 (list)](#목록-list)
+1. [인용문 (block quote)](#인용문-block-quote)
+1. [표 (table)](#표-table)
+1. [코드 블록 (code block)](#코드-블록-code-block)
     
   <br>
 
-2. 이동 
-    1. [내부문서 이동](#내부문서-이동)
-    2. [외부링크 이동](#외부링크-이동)
+**이동** 
+1. [내부문서 이동](#내부문서-이동)
+2. [외부링크 이동](#외부링크-이동)
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 
 ---------------------------------------------------
-## 1 기초
+# 1. 기초
 ---------------------------------------------------
 ### 제목 (header)
 ```
@@ -135,12 +115,31 @@
 | :--      |   :--:   |    --:   |
 |    td    |    td    |    td    |
 |    td    |    td    |    td    |
+|    td    |    td    |    td    |
 
 
 <br>
+
+---------------------------------------------------
+### 코드-블록-code-block
+```
+□```html:hello.html
+<div>
+ <p>Hello, LYNMP!</p>
+</div>
+□```
+```
+```html:hello.html
+<div>
+ <p>Hello, LYNMP!</p>
+</div>
+```
+
+
+
 ---------------------------------------------------
 
-## 2 이동
+# 2. 이동
 
 ---------------------------------------------------
 ### 내부문서 이동
@@ -162,6 +161,8 @@
 ---------------------------------------------------
 ### 외부링크-이동
 ```
-[Naver Move](https://www.naver.com/)  
+text에 걸기 : [Naver Move](https://www.naver.com/)  
+url 노출하면서 링크 걸기 : <https://www.naver.com/>
 ```
-[Naver Move](https://www.naver.com/) 
+[Naver Move](https://www.naver.com/) <br>
+<https://www.naver.com/>
