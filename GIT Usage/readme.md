@@ -195,6 +195,8 @@ git pull origin master
   ```
   git reset --hard HEAD~1
   ```
+  -  git reset --hard HEAD~1
+  -  git reset --hard HEAD~2
 
 <br>
 
