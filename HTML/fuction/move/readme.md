@@ -10,7 +10,7 @@
 ## 페이지내 화면 이동
 ### 01-scrollToAreaMenu
 
-<img src="./img/01-scrollToAreaMenu.gif" style="height:150px;">
+<img src="./img/01-scrollToAreaMenu.gif" style="height:200px;">
 
 #### html
 ```
