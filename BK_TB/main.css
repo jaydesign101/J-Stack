@@ -1,0 +1,28 @@
+.content1 {
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
+.content1 blockquote {
+  background-color: #f6f6f6;
+  padding: 2em;
+  border: 1px solid #000;
+}
+.content1 pre {
+  background-color: #f6f6f6;
+  padding: 1em;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.content1 p[data-ke-size=size14] {
+  font-size: 14px;
+}
+.content1 p[data-ke-size=size16] {
+  font-size: 16px;
+}
+.content1 p[data-ke-size=size20] {
+  font-size: 20px;
+}
+.content1 p[data-ke-size=size26] {
+  font-size: 26px;
+}

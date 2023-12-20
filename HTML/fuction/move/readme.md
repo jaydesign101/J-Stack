@@ -2,15 +2,15 @@
 
 ## Index
 
-1. [페이지내 화면 이동](#페이지내-화면-이동)
+1. [페이지내 화면 스크롤 이동](#페이지내-화면-스크롤-이동)
 
 <br>
 
 ---------------------------------------------------
-## 페이지내 화면 이동
+## 페이지내 화면 스크롤 이동
 ### 01-scrollToAreaMenu
 
-<img src="./img/01-scrollToAreaMenu.gif" style="height:200px;">
+<img src="./md-img/01-scrollToAreaMenu.gif" style="height:200px;">
 
 #### html
 ```
