@@ -2,14 +2,17 @@
 
 ## Index
 
-1. [기본 슬라이드](#기본-슬라이드)
+1. [기본 슬라이드](#1-기본-슬라이드)  
+1. [스와이프 슬라이드](#2-스와이프-슬라이드)
 
 <br>
 
 ---------------------------------------------------
-## 기본 슬라이드
+## 1. 기본 슬라이드
 ### 01-defaultSlider
-"# 이전 및 다음 버튼 # 불렛 (스와이프 없음)"
+- 이전 및 다음 버튼
+- 불렛 (클릭 가능)
+- 스와이프 없음
 
 <img src="./md-img/01-defaultSlider.gif" style="height:200px;">
 
@@ -42,6 +45,7 @@
   const mySliderEl = document.querySelector("#defaultSlider");
   const btnPrevEl = mySliderEl.querySelector(".btn-prev");
   const btnNextvEl = mySliderEl.querySelector(".btn-next");
+  const sliderEl = mySliderEl.querySelector(".slider");
   const itemWrapEl = mySliderEl.querySelector(".item-wrap");
   const itemEls = mySliderEl.querySelectorAll(".item");
   const paginationEl = mySliderEl.querySelector(".pagination");
@@ -66,9 +70,9 @@
   /* 함수 : 자주 사용하니 함수로 만듦 */
   // slide 이동 함수
   function moveSlider(){
-    let itemGapSet = currentIndex * itemGap; // 같이 이동할 itemEl 간격
     itemWrapEl.style.transition = ".3s"; // 이동할 시간
-    itemWrapEl.style.transform = `translateX(calc(${-currentIndex * 100}% - ${itemGapSet}px))`; // item-wrap 이동
+    itemWrapEl.style.transform = `translateX(calc(${-currentIndex * 100}% - ${currentIndex * itemGap}px))`; 
+    // item-wrap 이동, itemEl 간격도 같이 계산
   }
 
   // 페이지네이션 불렛 setUp
@@ -141,5 +145,86 @@
   })
 ```
 
-<br>
+### <br>
+
+---------------------------------------------------
+## 2. 스와이프 슬라이드
+### 02-swipeSlider
+- [기본 슬라이드](#1-기본-슬라이드)에 이어서 제작
+  - 이전 및 다음 버튼
+  - 불렛 (클릭 가능)
+- 스와이프 기능 추가 (드래그 앤 드롭)
+
+<img src="./md-img/02-swipeSlider.gif" style="height:200px;">
+
+#### html
+[기본 슬라이드](#1-기본-슬라이드)와 같음
+
+#### JS
+[기본 슬라이드](#1-기본-슬라이드)에 이어서 작성
+```
+/* 스와이프 */
+// 스와이프 필요 변수
+let startPos = 0; // 스와이프 시작 좌표
+let movePos = 0; // 스와이프 이동 좌표
+let isSwiping = false; // 스와이프 실행 여부 확인
+
+// 스와이프 관련 함수 : 마우스(PC) 및 터치(Mobile)에서 동시에 동작하므로 함수를 만듦
+function handleSwipeStart(e){
+  startPos = e.clientX || e.touches[0].clientX;
+  if(e.clientX){
+    e.preventDefault()
+  }
+  isSwiping = true;
+}
+
+function handleSwipeMove(e){
+  if(isSwiping){
+    movePos = startPos - (e.clientX || e.touches[0].clientX); 
+    // 마우스가 오른쪽 이동하면 movePos가 - (왼쪽으로 이동), 마우스가 왼쪽 이동하면 movePos가 + (오른쪽으로 이동)
+    let endMovePos = Math.max(Math.min(movePos, 50), -50);; 
+    // 처음 혹은 마지막 슬라이드일때 스와이프 제한 거리
+    let translateXValue;
+    if(currentIndex == 0 && movePos < 0){
+      translateXValue = `calc( ${-currentIndex * 100}% - ${currentIndex * itemGap}px - ${endMovePos}px)`;
+    }else if(currentIndex == slideCount-1 && movePos > 0){
+      translateXValue = `calc( ${-currentIndex * 100}% - ${currentIndex * itemGap}px - ${endMovePos}px)`;
+    }else{
+      translateXValue = `calc( ${-currentIndex * 100}% - ${currentIndex * itemGap}px - ${movePos}px)`;
+    }
+    itemWrapEl.style.transition = 'none';
+    itemWrapEl.style.transform = `translateX(${translateXValue})`
+  }
+}
+
+function handleSwipeEnd(e){
+  isSwiping = false;
+  let swipePoint = Math.round(sliderEl.offsetWidth / 4) // 슬라이더 너비의 25% 때 스와이핑
+  if(Math.abs(movePos) > swipePoint){
+    if(movePos < 0 && currentIndex > 0 && currentIndex <= slideCount-1){ 
+      // "마우스가 오른쪽으로 이동 && 두번째 슬라이드 ~ 마지막 슬라이드" 는 왼쪽으로 이동
+      setUpBullet(currentIndex, currentIndex-1)
+      currentIndex--;
+    }else if(movePos > 0 && currentIndex >= 0 && currentIndex < slideCount-1){
+      // "마우스가 왼쪽으로 이동 && 첫번째 슬라이드 ~ 마지막에서 이전 슬라이드" 는 오른쪽으로 이동
+      setUpBullet(currentIndex, currentIndex+1)
+      currentIndex++;
+    }
+  }
+  moveSlider();
+  setupBtn();
+  movePos = 0; // mouseleave 되어도 이동하지 않도록 movePos를 0으로 세팅
+}
+  // 데스크탑 스와이프
+  sliderEl.addEventListener("mousedown", handleSwipeStart);
+  sliderEl.addEventListener("mousemove", handleSwipeMove);
+  sliderEl.addEventListener("mouseup", handleSwipeEnd);
+  sliderEl.addEventListener("mouseleave", handleSwipeEnd);
+  
+  // 모바일 스와이프
+  sliderEl.addEventListener("touchstart", handleSwipeStart);
+  sliderEl.addEventListener("touchmove", handleSwipeMove);
+  sliderEl.addEventListener("touchend", handleSwipeEnd);
+```
+
 

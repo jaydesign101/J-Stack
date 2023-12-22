@@ -1,5 +1,12 @@
 # Index
 
+1. [dom 요소 선택](#dom-요소-선택)
+    - [document.getElementsByTagName()](#태그명으로-요소-선택--documentgetelementsbytagnametag)
+    - [document.getElementsByName()](#네임명으로-요소-선택--documentgetelementsbynamename)
+    - [document.getElementsByClassName()](#클래스명으로-요소-선택--documentgetelementsbyclassnameclass)
+    - [document.getElementById()](#아이디명으로-요소-선택--documentgetelementbyidid)
+    - [document.querySelector()](#css선택자를-이용하여-한-요소-선택--doucumentqueryselectorcss)
+    - [document.querySelectorAll()](#css선택자를-이용하여-한-요소-선택--doucumentqueryselectorcss)
 1. [클래스명 관련](#클래스명-관련)
     - [.classList.add()](#클래스명-추가하기--classlistadd)
     - [.classList.remove()](#클래스명-삭제하기--classlistremove)
@@ -20,6 +27,77 @@
 <br>
 
 ----------------------------------------------------------------------------
+# dom 요소 선택
+
+### 태그명으로 요소 선택 : document.getElementsByTagName('Tag')
+```
+var el = document.getElementsByTagName('Tag');
+```
+- 유사 배열 형태로 반환 (때문에 Element 뒤에 s가 붙는다)
+- &lt;div&gt;  
+▷ document.getElementsByTagName('div');
+
+
+<br>
+
+### 네임명으로 요소 선택 : document.getElementsByName('Name')
+```
+var el = document.getElementsByName('Name');
+```
+- 유사 배열 형태로 반환 (때문에 Element 뒤에 s가 붙는다)
+- &lt;div name="divName"&gt;  
+▷ document.getElementsByName('divName');
+
+<br>
+
+### 클래스명으로 요소 선택 : document.getElementsByClassName('Class')
+```
+var el = document.getElementsByClassName('Class');
+```
+- 유사 배열 형태로 반환 (때문에 Element 뒤에 s가 붙는다)
+- &lt;div class="divClass"&gt;  
+▷ document.getElementsByClassName('divClass');
+
+<br>
+
+### 아이디명으로 요소 선택 : document.getElementById('ID')
+```
+var el = document.getElementById('ID');
+```
+- 단 하나의 요소만 반환 (ID명은 HTML문서 내에서 한번만 사용할 수 있다, 때문에 Element 뒤에 s가 붙지 않는다)
+- &lt;div id="divID"&gt;  
+▷ document.getElementByTagName('divID');
+
+
+<br>
+
+### CSS선택자를 이용하여 한 요소 선택 : doucument.querySelector('css')
+```
+var el = document.querySelector('css');
+```
+- CSS 선택자 문법에 따라 작성한다, 한 요소만 선택한다
+- &lt;div class="divClass"&gt;  
+▷ document.querySelector('.divClass');
+- &lt;div id="divID"&gt;  
+▷ document.querySelector('#divID');
+
+<br>
+
+### CSS선택자를 이용하여 여러 요소 선택 : doucument.querySelectorAll('css')
+```
+var el = document.querySelectorAll('css');
+```
+- CSS 선택자 문법에 따라 작성한다, 여러 요소를 선택한다 (유사 배열로 반환)
+- &lt;div class="divClass"&gt;  
+▷ document.querySelectorAll('.divClass');
+- &lt;div id="divID"&gt;  
+▷ document.querySelectorAll('#divID');
+
+
+
+<br>
+
+---------------------------------------------------------------------------
 
 # 클래스명 관련
 
@@ -115,19 +193,20 @@ var classNameString = 요소.classList.value;
 
 ### 모니터 기준 xy값 : screenX, screenY
 ```
-function(e){
+function a(e){
   e.screenX;
   e.screenY;
 }
 ```
 - 사용자 모니터 화면 기준으로 x,y값을 구한다.
 - 만약 더블 모니터라면, 왼쪽 모니터와 오른쪽 모니터의 좌표값이 각각 다르다.
+- 이벤트 객체 e : 이벤트가 발생했을때 해당 이벤트에 대한 정보를 제공하는 객체 (마우스 클릭, 키보드 입력, 창 크기 조절)
 
 <br>
 
 ### 페이지 기준 xy값 : pageX, pageY
 ```
-function(e){
+function a(e){
   e.pageX;
   e.pageY;
 }
@@ -140,7 +219,7 @@ function(e){
 
 ### 뷰포트 기준 xy값 : clientX, clientY
 ```
-function(e){
+function a(e){
   e.clientX;
   e.clientY;
 }
@@ -153,7 +232,7 @@ function(e){
 
 ### node 기준 xy값 : offsetX, offsetY
 ```
-function(e){
+function a(e){
   e.offsetX;
   e.offsetY;
 }

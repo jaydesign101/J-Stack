@@ -122,8 +122,6 @@ function infiniteSlider(sliderString){
   
   function handleSwipeEnd() {
     sliderClick = false;
-   
-  
     if (changePoint < Math.abs(offset)) {
       if (offset < 0 && !isAnimating) {
         currentIndex++;
