@@ -122,26 +122,26 @@
 - ```start```, ```left``` : 왼쪽 정렬
 - ```center``` : 가운데 정렬
 - ```end```, ```right``` : 오른쪽 정렬<br/>
-<img src="./img/1-1.png" style="width:100%;">
+<img src="./img/1-1.png" style="width:80%;">
 
 #### justify-content (부모 기준으로 수평 정렬)
 - ```stretch``` (기본), ```start/left``` (왼쪽), ```center``` (가운데), ```end/right``` (오른쪽)
 - ```space-around``` : 양쪽 수평 정렬
 - ```space-between``` : 양쪽 끝 수평 정렬<br/>
-<img src="./img/1-2.png" style="width:100%;">
+<img src="./img/1-2.png" style="width:80%;">
 
 #### align-items (셀 기준으로 수직 정렬)
 - ```stretch``` : (기본) 크기 미지정시 auto로 정렬 (상하 가득 참)
 - ```start``` : 위쪽 정렬
 - ```center``` : 가운데 정렬
 - ```end``` : 아래쪽 정렬<br/>
-<img src="./img/1-3.png" style="width:100%;">
+<img src="./img/1-3.png" style="width:80%;">
 
 #### align-content (부모 기준으로 수직 정렬)
 - ```stretch``` (기본), ```start``` (위쪽), ```center``` (가운데), ```end``` (아래쪽)
 - ```space-around``` : 양쪽 수직 정렬
 - ```space-between``` : 양쪽 끝 수직 정렬<br/>
-<img src="./img/1-4.png" style="width:100%;">
+<img src="./img/1-4.png" style="width:80%;">
 
 <br>
 
@@ -153,7 +153,7 @@
 - ```column``` : 열 우선 배치 알고리즘 처리
 - ```dense / row dense``` : 빈영역 채우면서 행 우선 배치 알고리즘 처리
 - ```column dense``` : 빈영역 채우면서 열 우선 배치 알고리즘 처리<br>
-<img src="./img/1-6.png" style="width:100%;">
+<img src="./img/1-6.png" style="width:80%;">
 
 <br>
 
@@ -211,7 +211,7 @@
 - row 시작 / col 시작 / row 끝 / col 끝 
 - "grid-column-start, grid-column-end, grid-column", "grid-row-start, grid-row-end, grid-row"의 축약형<br>
 
-<img src="./img/2-2.png" style="width:100%;">
+<img src="./img/2-2.png" style="width:80%;">
 <br/>
 
 ---
@@ -238,7 +238,7 @@
   z-index: 1
 }
 ```
-<img src="./img/2-3.png" style="width:180px">
+<img src="./img/2-3.png" style="width:160px">
 <br/>
 
 ---
