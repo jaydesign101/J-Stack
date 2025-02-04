@@ -1,12 +1,12 @@
 ## Index
 
-**1. 기초**
+**1. 시작**
 1. [git 설치](#git-설치)
 1. [git 버전 및 설치 확인](#git-버전-및-설치-확인)
 1. [git 시작 및 등록](#git-시작-및-등록)
     - [git 시작](#git-시작)
     - [git 옵션 설정](#git-옵션-설정)
-    - [git 이름 및 이메일 등록](#git-이름-및-이메일-등록)
+    - [git 이름 및 이메일 등록 및 변경](#git-이름-및-이메일-등록-및-변경)
     - [git 등록 정보 확인](#git-등록-정보-확인)
     - [git 로그](#git-로그)
 
@@ -18,16 +18,18 @@
 1. [git 버전관리 지정](#git-버전관리-지정)
 1. [git 커밋](#git-커밋)
 1. [git 원격브랜치 연결](#git-원격브랜치-연결)
-1. [git 푸시](#git-푸시)
-1. [git 풀](#git-풀)
+1. [git 푸시 (업로드)](#git-푸시-업로드)
+1. [git 풀 (다운로드)](#git-풀-다운로드)
 1. [git 버전 되돌리기 (Reset)](#git-버전-되돌리기-reset)
 1. [github 프로젝트 복사](#github-프로젝트-복사)
+
 
 <br/>
 
 **3. VS Code & Git 프로세스**
 
 1. [github 수정사항 업로드(푸시)](#github-수정사항-업로드푸시)
+1. [github 계정 변경](#github-계정-변경)
 
 <br>
 
@@ -83,15 +85,16 @@ git init
 
 <br>
 
-#### git 이름 및 이메일 등록 : 버전 생성, 커밋을 위한 정보 등록
-- 이름 등록 (github와 이름 같게 하는게 좋음)
-  ```
-  git config --global user.name ‘userName’
-  ```
-- 이메일 등록 (github 이메일)
-  ```
-  git config --global user.email ‘userName@gmail.com’
-  ```
+#### git 이름 및 이메일 등록 및 변경
+- 버전 생성, 커밋을 위한 정보 등록 및 변경
+  - 이름 등록 (github와 이름 같게 하는게 좋음)
+    ```
+    git config --global user.name ‘userName’
+    ```
+  - 이메일 등록 (github 이메일)
+    ```
+    git config --global user.email ‘userName@gmail.com’
+    ```
 
 <br>
 
@@ -158,22 +161,25 @@ git remote add origin 원격주소(https://github.~)
 <br>
 
 ---------------------------------------------------
-### git 푸시
+### git 푸시 (업로드)
+
 ```
 git push origin master
 ```
 - origin(로컬 브랜치)를 master(원격 브랜치)로 업로드함
 - 원격 브랜치는 master 혹은 main 일수 있음
+- origin → master
 
 <br>
 
 ---------------------------------------------------
-### git 풀
+### git 풀 (다운로드)
 
 ```
 git pull origin master
 ```
 - origin(로컬 브랜치)에 master(원격 브랜치)로 가져옴
+- origin ← master
 
 <br>
 
@@ -220,6 +226,7 @@ git clone 원격주소
 <br>
 
 ---------------------------------------------------
+
 # 3. VS Code & Git 프로세스
 
 <br>
@@ -241,3 +248,19 @@ git clone 원격주소
   ```
   git push origin main
   ```
+<br>
+
+---
+
+### github 계정 변경
+- 이름 변경 (등록)
+  ```
+  git config --global user.name ‘userName’
+  ```
+- 이메일 변경 (등록)
+  ```
+  git config --global user.email ‘userName@gmail.com’
+  ```
+- 기존 로그인 정보 삭제
+  - 컴퓨터 : 제어판 → 사용자 계정 → 자격 증명 관리 → Windows 자격 증명 → github 계정 삭제<br/>
+<img src="./img/account-change-01.png" style="width:460px;">
