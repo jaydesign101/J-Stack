@@ -34,6 +34,7 @@
 |align-content|stretch (기본), <br>start, center, end,<br>space-around, space-between|그리드(부모) 기준으로 자식 수직 정렬|
 |[grid-auto-flow](#grid-auto-flow)|row(기본), column, dense|자식요소 배치 알고리즘 처리|
 <br>
+
 ---
 
 ### display
@@ -191,8 +192,10 @@
 - ```stretch``` : (기본) 크기 미지정시 auto로 정렬 (상하 가득 참)
 - ```start``` : 위쪽 정렬
 - ```center``` : 가운데 정렬
-- ```end``` : 아래쪽 정렬<br/>
+- ```end``` : 아래쪽 정렬
+
 <br>
+
 ---
 
 ### gird 영역 지정 "컬럼/로우 라인 기준"
